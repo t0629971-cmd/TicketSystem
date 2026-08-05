@@ -1,35 +1,45 @@
 local printer = peripheral.find("printer")
 
 if not printer then
-    print("Printer not found!")
+    print("Принтер не найден!")
     return
 end
 
 if not printer.newPage() then
-    print("Insert paper into the printer!")
+    print("Вставьте бумагу!")
     return
 end
 
-printer.setPageTitle("Ticket")
+printer.setPageTitle("Билет")
 
 printer.setCursorPos(1,1)
-printer.write("===================")
+printer.write("====================")
 
-printer.setCursorPos(1,2)
-printer.write("      TICKET")
+printer.setCursorPos(4,2)
+printer.write("БИЛЕТ")
 
 printer.setCursorPos(1,3)
-printer.write("===================")
+printer.write("====================")
 
 printer.setCursorPos(1,5)
-printer.write("Payment: 2 Diamonds")
+printer.write("Оплата:")
+printer.setCursorPos(10,5)
+printer.write("2 алмаза")
 
 printer.setCursorPos(1,7)
-printer.write("Status: PAID")
+printer.write("Статус:")
+printer.setCursorPos(10,7)
+printer.write("ОПЛАЧЕНО")
 
 printer.setCursorPos(1,9)
-printer.write("Enjoy your trip!")
+printer.write("Спасибо за покупку!")
+
+printer.setCursorPos(1,11)
+printer.write("Хорошей поездки!")
+
+printer.setCursorPos(1,13)
+printer.write("====================")
 
 printer.endPage()
 
-print("Ticket printed!")
+print("Чек напечатан!")
